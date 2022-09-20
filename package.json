@@ -1,0 +1,59 @@
+{
+  "name": "@planet/maps",
+  "version": "0.0.0",
+  "description": "Declarative mapping components for React",
+  "type": "module",
+  "scripts": {
+    "pretest": "npm run lint",
+    "test": "npm run test:rendering",
+    "test:unit": "vitest run -r ./tests/unit",
+    "lint": "eslint .",
+    "test:rendering": "playwright test --config=tests/rendering/playwright.config.js",
+    "start": "vite serve",
+    "start:rendering": "vite serve --config=tests/rendering/vite.config.js",
+    "build": "vite build",
+    "generate": "node tools/generate.js && npm run lint -- --fix",
+    "clean": "node tools/clean.js"
+  },
+  "license": "Apache-2.0",
+  "files": [
+    "config.js",
+    "lib",
+    "renderer"
+  ],
+  "dependencies": {
+    "react-reconciler": "^0.29.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.25.2",
+    "c8": "^7.12.0",
+    "eslint": "^8.23.1",
+    "eslint-config-planet": "^20.0.3",
+    "fs-extra": "^10.1.0",
+    "import-meta-resolve": "^2.0.2",
+    "jsdom": "^20.0.0",
+    "minimist": "^1.2.6",
+    "mustache": "^4.2.0",
+    "ol": "^7.1.0",
+    "prop-types": "^15.8.1",
+    "react-dom": "^18.1.0",
+    "semapro": "^1.1.0",
+    "semver": "^7.3.7",
+    "vite": "^3.1.0",
+    "vitest": "^0.23.2"
+  },
+  "eslintConfig": {
+    "extends": "planet/react",
+    "overrides": [
+      {
+        "files": [
+          "*.jsx",
+          "*.js"
+        ]
+      }
+    ],
+    "parserOptions": {
+      "ecmaVersion": "latest"
+    }
+  }
+}

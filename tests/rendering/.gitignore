@@ -1,0 +1,2 @@
+# only commit *-linux.png expected rendering output for CI
+*-darwin.png

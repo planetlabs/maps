@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1, width=device-width">
+  <title>
+    @planet/maps
+  </title>
+  <style>
+    html,
+    body {
+      height: 100%;
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      font-family: sans-serif;
+    }
+
+    #root {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .toolbar button {
+      margin-right: 10px;
+    }
+
+    .ol-control {
+      display: none;
+    }
+
+    .ol-scale-line {
+      background: rgba(0, 0, 0, 0.3);
+      border-radius: 4px;
+      bottom: 8px;
+      left: 8px;
+      padding: 2px;
+      position: absolute;
+    }
+
+    .ol-scale-line-inner {
+      border: 1px solid #eee;
+      border-top: none;
+      color: #eee;
+      font-size: 10px;
+      text-align: center;
+      margin: 1px;
+      will-change: contents, width;
+      transition: all 0.25s;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="root"></div>
+  <script type="module" src="./main.js"></script>
+</body>
+
+</html>
