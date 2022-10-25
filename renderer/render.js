@@ -7,7 +7,10 @@ import ReactReconciler from 'react-reconciler';
 import Source from 'ol/source/Source.js';
 import View from 'ol/View.js';
 import {CONTROL, INTERACTION, LAYER, OVERLAY, SOURCE, VIEW} from '../config.js';
-import {ConcurrentRoot, DefaultEventPriority} from 'react-reconciler/constants';
+import {
+  ConcurrentRoot,
+  DefaultEventPriority,
+} from 'react-reconciler/constants.js';
 import {
   prepareControlUpdate,
   prepareInteractionUpdate,
