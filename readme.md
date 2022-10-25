@@ -2,17 +2,21 @@
 
 Declarative mapping components
 
-## Background
+## Use
 
-React lets you build interactive UIs with (mostly) declarative syntax.  OpenLayers provides an imperative API for building mapping apps.  It can be awkward to map React's component API to an imperative API.  However, the React team provides a package for creating custom renderers: [`react-reconciler`](https://www.npmjs.com/package/react-reconciler).  This is how they integrate with imperative APIs themselves.  The `react-dom` package uses `react-reconciler` to provide a mapping to the imperative DOM API.  `react-native` uses `react-reconciler` to map to imperative native APIs.
+```
+npm install @planet/maps
+```
 
-This library provides declarative mapping components representing imperative APIs from OpenLayers.
-
-## Example
-
-Here is an example of what a map looks like with components from this package:
+Import the components you need for your map.  Provide an `options` prop to pass to the underlying OpenLayers constructor.  Provide other props for values that you want to update with state changes.
 
 ```js
+import Map from '@planet/maps/lib/Map';
+import OSM from '@planet/maps/source/OSM';
+import ScaleLine from '@planet/maps/control/ScaleLine';
+import View from '@planet/maps/lib/View';
+import WebGLTile from '@planet/maps/layer/WebGLTile';
+
 function MyApp() {
   return (
     <Map style={{width: '100%', height: '100%'}}>
@@ -27,6 +31,12 @@ function MyApp() {
 ```
 
 You can also listen to any events on the map, view, controls, interactions, layers, or sources; use `ref`s to get access to the underlying OpenLayers instances; and more.
+
+## Background
+
+React lets you build interactive UIs with (mostly) declarative syntax.  OpenLayers provides an imperative API for building mapping apps.  It can be awkward to map React's component API to an imperative API.  However, the React team provides a package for creating custom renderers: [`react-reconciler`](https://www.npmjs.com/package/react-reconciler).  This is how they integrate with imperative APIs themselves.  The `react-dom` package uses `react-reconciler` to provide a mapping to the imperative DOM API.  `react-native` uses `react-reconciler` to map to imperative native APIs.
+
+This library provides declarative mapping components representing imperative APIs from OpenLayers.
 
 ## Design Goals
 
