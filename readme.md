@@ -1,5 +1,7 @@
 # @planet/maps
 
+![Test Status](https://github.com/planetlabs/maps/actions/workflows/test.yml/badge.svg)
+
 Declarative mapping components
 
 ## Use
@@ -12,10 +14,10 @@ Import the components you need for your map.  Provide an `options` prop to pass 
 
 ```js
 import Map from '@planet/maps/lib/Map';
-import OSM from '@planet/maps/source/OSM';
-import ScaleLine from '@planet/maps/control/ScaleLine';
+import OSM from '@planet/maps/lib/source/OSM';
+import ScaleLine from '@planet/maps/lib/control/ScaleLine';
 import View from '@planet/maps/lib/View';
-import WebGLTile from '@planet/maps/layer/WebGLTile';
+import WebGLTile from '@planet/maps/lib/layer/WebGLTile';
 
 function MyApp() {
   return (
