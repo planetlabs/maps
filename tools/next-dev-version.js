@@ -1,3 +1,4 @@
+import esMain from 'es-main';
 import fse from 'fs-extra';
 import process from 'node:process';
 import semver from 'semver';
@@ -16,11 +17,13 @@ async function main() {
   return `${s.major}.${s.minor}.${s.patch}-dev.${Date.now()}`;
 }
 
-main()
-  .then(version => {
-    process.stdout.write(`${version}\n`);
-  })
-  .catch(error => {
-    process.stderr.write(`${error}\n`);
-    process.exit(1);
-  });
+if (esMain(import.meta)) {
+  main()
+    .then(version => {
+      process.stdout.write(`${version}\n`);
+    })
+    .catch(error => {
+      process.stderr.write(`${error}\n`);
+      process.exit(1);
+    });
+}
