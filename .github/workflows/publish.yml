@@ -1,0 +1,49 @@
+name: Publish Package
+
+on:
+  push:
+    branches:
+      - main
+    tags:
+      - 'v*.*.*'
+
+permissions:
+  contents: read
+
+jobs:
+  publish-branch:
+    if: startsWith(github.ref, 'refs/heads/')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          registry-url: 'https://registry.npmjs.org'
+      - name: Install dependencies
+        run: npm ci
+      - name: Publish
+        run: |
+          VERSION=$(node tools/next-dev-version.js)
+          npm --no-git-tag-version version ${VERSION}
+          npm publish --tag dev
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+  publish-tag:
+    if: startsWith(github.ref, 'refs/tags/')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          registry-url: 'https://registry.npmjs.org'
+      - name: Install dependencies
+        run: npm ci
+      - name: Assert Latest Release
+        run: node tools/newest-tag.js --tag ${GITHUB_REF_NAME}
+      - name: Publish
+        run: |
+          npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
