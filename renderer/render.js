@@ -188,6 +188,15 @@ function removeChildFromContainer(map, child) {
   throw new Error(`Cannot remove child from the map: ${child}`);
 }
 
+function removeChild(parent, child) {
+  // this happens with group layers
+  if (child instanceof BaseLayer && parent.getLayers) {
+    parent.getLayers().remove(child);
+    return;
+  }
+  throw new Error(`TODO: implement removeChild for ${parent} and ${child}`);
+}
+
 function clearContainer(map) {
   map.getLayers().clear();
   // Need to leave the default controls and interactions.
@@ -243,10 +252,7 @@ const reconciler = ReactReconciler({
   commitUpdate,
   clearContainer,
   removeChildFromContainer,
-
-  removeChild() {
-    throw new Error('TODO: implement removeChild');
-  },
+  removeChild,
 
   insertInContainerBefore,
   insertBefore,
