@@ -83,7 +83,7 @@ describe('Static attachments', () => {
   });
 
   test('correctly attaches a layer and source with features', async () => {
-    const features = [new Feature({geomtery: new Point(0, 0)})];
+    const features = [new Feature({geometry: new Point(0, 0)})];
 
     const map = await miniRender(
       <VectorLayer>
