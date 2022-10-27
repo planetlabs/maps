@@ -223,7 +223,7 @@ function insertInContainerBefore(map, child, beforeChild) {
   } else if (child instanceof Control) {
     collection = map.getControls();
   } else if (child instanceof Interaction) {
-    collection = map.getInetracations();
+    collection = map.getInteractions();
   } else if (child instanceof BaseLayer) {
     collection = map.getLayers();
   }
