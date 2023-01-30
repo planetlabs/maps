@@ -42,7 +42,7 @@
     "semapro": "^1.1.0",
     "semver": "^7.3.7",
     "vite": "^4.0.0",
-    "vitest": "^0.27.1"
+    "vitest": "^0.28.3"
   },
   "eslintConfig": {
     "extends": "planet/react",
