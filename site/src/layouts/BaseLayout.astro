@@ -1,0 +1,24 @@
+---
+import '../styles/global.css';
+
+const {frontmatter} = Astro.props;
+const title = (frontmatter && frontmatter.title) || Astro.props.title;
+---
+
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li><a href={import.meta.env.BASE_URL}>@planet/maps</a></li>
+        <li><a href={`${import.meta.env.BASE_URL}examples/`}>examples</a></li>
+      </ul>
+    </nav>
+    <h1>{title}</h1>
+    <slot />
+  </body>
+</html>

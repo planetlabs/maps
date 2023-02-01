@@ -1,4 +1,6 @@
-/node_modules/
+node_modules/
 /dist/
 /test-results/
 /tests/unit/coverage/
+/site/.astro/
+/site/dist/

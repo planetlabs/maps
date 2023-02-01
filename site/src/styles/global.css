@@ -1,0 +1,70 @@
+:root {
+  --sans-font: Inter, sans-serif;
+  --mono-font: Consolas, Menlo, Monaco, 'Andale Mono', 'Ubuntu Mono',
+    monospace;
+
+  --bg: #fff;
+  --brand: #009db1;
+  --dark-gray: #363f43;
+  --light-gray: #919698;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: var(--sans-font);
+}
+
+
+body {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 120ch;
+  padding: 1rem;
+  line-height: 1.5;
+  color: var(--dark-gray);
+  background-color: var(--bg);
+}
+
+nav ul {
+  display: flex;
+  flex-direction: row;
+  padding: 0;
+}
+
+nav li {
+  list-style-type: none;
+  padding: 0.5rem;
+}
+
+a {
+  color: var(--brand);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+pre {
+  padding: 0.5rem 1rem;
+}
+
+code {
+  /* same as the github-light theme */
+  color: #116329;
+}
+
+button {
+  background-color: var(--bg);
+  border: 1px solid var(--light-gray);
+  border-radius: 2px;
+  padding: 4px;
+  margin: 0 2px;
+  cursor: pointer;
+}

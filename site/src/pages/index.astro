@@ -1,0 +1,75 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import {highlight} from '../util/highlight.js';
+
+const source = await highlight(`
+import Map from '@planet/maps/lib/Map';
+import OSM from '@planet/maps/lib/source/OSM';
+import ScaleLine from '@planet/maps/lib/control/ScaleLine';
+import View from '@planet/maps/lib/View';
+import WebGLTile from '@planet/maps/lib/layer/WebGLTile';
+
+function MyApp() {
+  return (
+    <Map style={{width: '100%', height: '100%'}}>
+      <View options={{center: [0, 0], zoom: 1}} />
+      <TileLayer>
+        <OSM />
+      </TileLayer>
+      <ScaleLine />
+    </Map>
+  );
+}
+`);
+---
+
+<BaseLayout title="@planet/maps">
+  <h3>Declarative mapping components for React</h3>
+  <p>
+    The @planet/maps library provides components for rendering maps in your
+    React applications. The library acts as a wrapper around <a
+      href="https://openlayers.org/">OpenLayers</a
+    >, transforming the imperative API into declarative components.
+  </p>
+  <p>
+    See below for a basic example. Take a look through the
+    <a href="./examples/">examples</a> directory to learn how to use the library.
+  </p>
+  <div set:html={source} />
+  <section>
+    <h4>💿 Installation</h4>
+    The library requires React and OpenLayers. You can install them all with
+    <a href="https://nodejs.org/">npm</a>:
+    <code><pre>npm install @planet/layers ol react react-dom</pre></code>
+  </section>
+  <section>
+    <h4>✨ Usage tips</h4>
+    <ul>
+      <li>
+        The library exports one component per OpenLayers class. For example, the
+        <code>@planet/maps/lib/Map</code> component wraps the
+        <code>ol/Map</code> class.
+      </li>
+      <li>
+        Child components are used in the library to represent nested
+        relationships in OpenLayers. For example, a map has a view and layers. A
+        layer has a source.
+      </li>
+      <li>
+        The <code>options</code> prop is passed to the constructor of the underlying
+        class. This prop cannot be updated.
+      </li>
+      <li>
+        Listeners for OpenLayers events can be added with
+        <code>on</code> -prefixed props. For example, <code>onChange</code> will
+        be called for <code>change</code> events.
+      </li>
+      <li>
+        All other props can be updated if there is a corresponding
+        <code>set</code> -prefixed method on the underlying instances. For example,
+        updating the <code>center</code> prop of a <code>&lt;View&gt;</code> component
+        will call <code>setCenter</code> on the underlying view.
+      </li>
+    </ul>
+  </section>
+</BaseLayout>

@@ -1,0 +1,14 @@
+---
+title: 'Controlled View'
+level: 1
+description: |
+  In this example, the `<View>` component is given a `center` and `zoom`.  These
+  props can be updated to update the state of the view.  The view is also given
+  an `onChange` callback.  This function is called after the view state changes.
+  In this example, the callback is used to update component state and render the
+  view properties at the bottom of the map.
+---
+
+import ControlledView from '../../components/examples/ControlledView.jsx';
+
+<ControlledView client:only="react" />
