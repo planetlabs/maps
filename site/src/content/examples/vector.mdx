@@ -1,0 +1,17 @@
+---
+title: 'Vector Layers'
+level: 1
+description: |
+  This example shows two vector layers using data from GeoJSON sources.  The
+  layers are given a `style` prop that controls the styling of vector features.
+  The sources are given `url` and `format` options for fetching and parsing
+  the data.
+
+  The style for the urban areas vector layer can be controlled by clicking on
+  the "gray" and "red" buttons.  The `useState` hook is used to maintain the fill
+  color for this layer, and clicking on the buttons updates this state.
+---
+
+import Vector from '../../components/examples/Vector.jsx';
+
+<Vector client:only="react" />

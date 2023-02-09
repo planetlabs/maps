@@ -15,14 +15,14 @@
  */
 import {{importName}} from '{{importPath}}';
 import {createElement, forwardRef} from 'react';
-import {node} from 'prop-types';
+import propTypes from 'prop-types';
 
 const {{constructorName}} = forwardRef(({children, ...props}, ref) => {
   return createElement('{{elementType}}', {cls: {{importName}}, ref, ...props}, children);
 });
 
 {{constructorName}}.propTypes = {
-  children: node,
+  children: propTypes.node,
 };
 
 export default {{constructorName}};

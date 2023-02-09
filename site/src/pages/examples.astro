@@ -1,0 +1,24 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import {getCollection} from 'astro:content';
+
+const examples = await getCollection('examples');
+---
+
+<BaseLayout title="Examples">
+  <p>
+    Read through the examples below to learn about how to use the @planet/maps
+    library.
+  </p>
+  <ul>
+    {
+      examples
+        .sort((a, b) => (a.data.level < b.data.level ? -1 : 1))
+        .map(example => (
+          <li>
+            <a href={`./${example.slug}/`}>{example.data.title}</a>
+          </li>
+        ))
+    }
+  </ul>
+</BaseLayout>

@@ -73,6 +73,16 @@ Install project dependencies:
 npm install
 ```
 
+Start the development server:
+```bash
+npm start
+```
+
+Run the tests:
+```bash
+npm test
+```
+
 The rendering tests use Playwright for visual snapshot comparison.  See the [`tests/rendering/readme.md`](tests/rendering/readme.md) for more detail.
 
 

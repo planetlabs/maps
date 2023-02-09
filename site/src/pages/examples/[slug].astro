@@ -1,0 +1,61 @@
+---
+import 'ol/ol.css';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import fs from 'node:fs/promises';
+import remarkHtml from 'remark-html';
+import remarkParse from 'remark-parse';
+import {getCollection} from 'astro:content';
+import {highlight} from '../../util/highlight.js';
+import {unified} from 'unified';
+
+export async function getStaticPaths() {
+  const examples = await getCollection('examples');
+
+  return examples.map(example => ({
+    params: {
+      slug: example.slug,
+    },
+    props: {
+      example,
+    },
+  }));
+}
+
+const {example} = Astro.props;
+
+const description = unified()
+  .use(remarkParse)
+  .use(remarkHtml)
+  .process(example.data.description);
+
+const pathMatch = example.body.match(
+  /import .* from '\.\.\/\.\.\/components\/examples\/(.*)'/
+);
+const name = pathMatch[1];
+const rawSource = await fs.readFile(
+  `site/src/components/examples/${name}`,
+  'utf-8'
+);
+
+const source = await highlight(
+  rawSource.replaceAll('../../../../lib/', '@planet/maps/lib/')
+);
+
+const {Content} = await example.render();
+---
+
+<style>
+  .example-container {
+    position: relative;
+    width: 100%;
+    height: 512px;
+  }
+</style>
+
+<BaseLayout frontmatter={example.data}>
+  <div class="example-container">
+    <Content />
+  </div>
+  <div set:html={description} />
+  <div set:html={source} />
+</BaseLayout>
