@@ -10,29 +10,7 @@ Declarative mapping components
 npm install @planet/maps
 ```
 
-Import the components you need for your map.  Provide an `options` prop to pass to the underlying OpenLayers constructor.  Provide other props for values that you want to update with state changes.
-
-```js
-import Map from '@planet/maps/lib/Map';
-import OSM from '@planet/maps/lib/source/OSM';
-import ScaleLine from '@planet/maps/lib/control/ScaleLine';
-import View from '@planet/maps/lib/View';
-import WebGLTile from '@planet/maps/lib/layer/WebGLTile';
-
-function MyApp() {
-  return (
-    <Map style={{width: '100%', height: '100%'}}>
-      <View options={{center: [0, 0], zoom: 1}} />
-      <WebGLTile>
-        <OSM />
-      </WebGLTile>
-      <ScaleLine />
-    </Map>
-  );
-}
-```
-
-You can also listen to any events on the map, view, controls, interactions, layers, or sources; use `ref`s to get access to the underlying OpenLayers instances; and more.
+See the [planetlabs.github.io/maps](https://planetlabs.github.io/maps/) website for more details and examples using the library.
 
 ## Background
 
