@@ -31,7 +31,7 @@ Run the following to run the website during development:
 
 ```shell
 # from the root of the repo
-npm run site
+npm start
 ```
 
 The production version of the website is built by a CI job.
