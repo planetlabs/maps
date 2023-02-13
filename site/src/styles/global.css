@@ -53,6 +53,7 @@ a:hover {
 
 pre {
   padding: 0.5rem 1rem;
+  overflow-y: auto;
 }
 
 code {
