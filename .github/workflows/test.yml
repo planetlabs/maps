@@ -19,9 +19,6 @@ jobs:
     name: Test
     runs-on: ubuntu-latest
 
-    strategy:
-      fail-fast: false
-
     steps:
       - name: Clone Repository
         uses: actions/checkout@v3
