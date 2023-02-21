@@ -1,8 +1,7 @@
 import esMain from 'es-main';
+import parseArgs from 'yargs-parser';
 import semver from 'semver';
-import yargs from 'yargs';
 import {getLatestRelease} from './get-latest-release.js';
-import {hideBin} from 'yargs/helpers';
 
 /**
  * @typedef {Object} Options
@@ -30,13 +29,11 @@ async function main(options) {
 }
 
 if (esMain(import.meta)) {
-  const options = yargs(hideBin(process.argv))
-    .option('tag', {
-      describe: 'The tag to test (e.g. v1.2.3)',
-      type: 'string',
-    })
-    .demandOption('tag')
-    .parse();
+  const options = parseArgs(process.argv.slice(2));
+  if (!options.tag) {
+    process.stderr.write('missing --tag\n');
+    process.exit(1);
+  }
 
   main(options)
     .then(newest => {
