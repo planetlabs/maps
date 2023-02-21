@@ -1,6 +1,6 @@
 import createSemaphore from 'semapro';
 import fs from 'fs-extra';
-import parseArgs from 'minimist';
+import parseArgs from 'yargs-parser';
 import {dirname, join, relative} from 'node:path';
 
 const cwd = process.cwd();

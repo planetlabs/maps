@@ -1,13 +1,11 @@
 // @vitest-environment jsdom
 import Map from '../../../lib/Map.js';
 import OLMap from 'ol/Map';
-import VectorLayer from '../../../lib/layer/Vector';
-import {beforeEach, describe, expect, test} from 'vitest';
-
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-
+import VectorLayer from '../../../lib/layer/Vector';
 import {act} from 'react-dom/test-utils';
+import {beforeEach, describe, expect, test} from 'vitest';
 
 global.IS_REACT_ACT_ENVIRONMENT = true;
 

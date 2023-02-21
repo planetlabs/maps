@@ -32,7 +32,6 @@
     "@types/react": "^18.0.27",
     "@types/react-dom": "^18.0.10",
     "astro": "^2.0.8",
-    "c8": "^7.12.0",
     "es-main": "^1.2.0",
     "eslint": "^8.32.0",
     "eslint-config-planet": "^20.0.3",
@@ -42,9 +41,8 @@
     "fs-extra": "^11.1.0",
     "import-meta-resolve": "^2.0.2",
     "jsdom": "^21.0.0",
-    "minimist": "^1.2.6",
     "mustache": "^4.2.0",
-    "ol": "^7.1.0",
+    "ol": "^7.2.2",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -55,7 +53,8 @@
     "shiki": "^0.14.1",
     "unified": "^10.1.2",
     "vite": "^4.0.4",
-    "vitest": "^0.28.3"
+    "vitest": "^0.28.3",
+    "yargs-parser": "^21.1.1"
   },
   "eslintConfig": {
     "extends": [
