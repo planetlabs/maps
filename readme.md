@@ -14,7 +14,7 @@ See the [planetlabs.github.io/maps](https://planetlabs.github.io/maps/) website 
 
 ## Background
 
-React lets you build interactive UIs with (mostly) declarative syntax.  OpenLayers provides an imperative API for building mapping apps.  It can be awkward to map React's component API to an imperative API.  However, the React team provides a package for creating custom renderers: [`react-reconciler`](https://www.npmjs.com/package/react-reconciler).  This is how they integrate with imperative APIs themselves.  The `react-dom` package uses `react-reconciler` to provide a mapping to the imperative DOM API.  `react-native` uses `react-reconciler` to map to imperative native APIs.
+[React](https://react.dev/) lets you build interactive UIs with (mostly) declarative syntax.  OpenLayers provides an imperative API for building mapping apps.  It can be awkward to map React's component API to an imperative API.  However, the React team provides a package for creating custom renderers: [`react-reconciler`](https://www.npmjs.com/package/react-reconciler).  This is how they integrate with imperative APIs themselves.  The `react-dom` package uses `react-reconciler` to provide a mapping to the imperative DOM API.  `react-native` uses `react-reconciler` to map to imperative native APIs.
 
 This library provides declarative mapping components representing imperative APIs from OpenLayers.
 
