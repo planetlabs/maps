@@ -25,7 +25,7 @@
     "react-reconciler": "^0.29.0"
   },
   "devDependencies": {
-    "@astrojs/mdx": "^0.18.0",
+    "@astrojs/mdx": "^0.19.0",
     "@astrojs/react": "^2.0.2",
     "@octokit/rest": "^19.0.5",
     "@playwright/test": "^1.25.2",
