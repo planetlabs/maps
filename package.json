@@ -53,7 +53,7 @@
     "shiki": "^0.14.1",
     "unified": "^10.1.2",
     "vite": "^4.0.4",
-    "vitest": "^0.31.0",
+    "vitest": "^0.32.0",
     "yargs-parser": "^21.1.1"
   },
   "eslintConfig": {
