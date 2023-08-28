@@ -73,6 +73,14 @@ After updating the `ol` package to a new version, the generated component source
 npm run generate
 ```
 
+To publish a new release, choose the release type, update the `package.json` version and create a tag with `npm version`, and then push the change:
+```bash
+npm version minor
+git push --tags origin main
+```
+
+After pushing the changes, draft release notes based on the tag and publish the [GitHub release](https://github.com/planetlabs/maps/releases).
+
 ## Prior Art
 
 Other projects like [`react-openlayers-fiber`](https://github.com/crubier/react-openlayers-fiber) and [`react-ol-fiber`](https://www.npmjs.com/package/react-ol-fiber) use a similar approach and provided inspiration for this project.  The major difference between this project and those is that this project provides importable components for OpenLayers layers, sources, controls, and interactions.  The other projects bundle all of OpenLayers in their renderer.  So a simple "hello world" map with one of the existing projects is about 1.5 MB while the same with this project is about 460 KB.
