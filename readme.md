@@ -56,13 +56,22 @@ Start the development server:
 npm start
 ```
 
+The rendering tests use Playwright for visual snapshot comparison.  See the [`tests/rendering/readme.md`](tests/rendering/readme.md) for more detail.
+
+Before running tests for the first time, install the required Playwright browser:
+```bash
+npx playwright install chromium
+```
+
 Run the tests:
 ```bash
 npm test
 ```
 
-The rendering tests use Playwright for visual snapshot comparison.  See the [`tests/rendering/readme.md`](tests/rendering/readme.md) for more detail.
-
+After updating the `ol` package to a new version, the generated component sources should be updated:
+```bash
+npm run generate
+```
 
 ## Prior Art
 
