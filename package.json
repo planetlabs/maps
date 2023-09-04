@@ -31,7 +31,7 @@
     "@playwright/test": "^1.25.2",
     "@types/react": "^18.0.27",
     "@types/react-dom": "^18.0.10",
-    "astro": "^2.0.8",
+    "astro": "^3.0.7",
     "es-main": "^1.2.0",
     "eslint": "^8.32.0",
     "eslint-config-planet": "^20.0.3",
