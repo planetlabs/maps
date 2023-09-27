@@ -4,6 +4,6 @@ import {defineConfig} from 'astro/config';
 
 export default defineConfig({
   site: 'https://planetlabs.github.io',
-  base: '/maps',
+  base: '/maps/',
   integrations: [mdx(), react()],
 });
