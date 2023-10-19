@@ -1,10 +1,14 @@
-import shiki from 'shiki';
+import {getHighlighter} from 'shikiji';
 
-const highlighterPromise = shiki.getHighlighter({
-  theme: 'github-light',
+const highlighterPromise = getHighlighter({
+  themes: ['github-light'],
+  langs: ['javascript'],
 });
 
 export async function highlight(code) {
   const highlighter = await highlighterPromise;
-  return highlighter.codeToHtml(code, {lang: 'js'});
+  return highlighter.codeToHtml(code, {
+    lang: 'javascript',
+    theme: 'github-light',
+  });
 }
