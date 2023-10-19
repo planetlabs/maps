@@ -50,7 +50,7 @@
     "remark-parse": "^11.0.0",
     "semapro": "^1.1.0",
     "semver": "^7.3.7",
-    "shiki": "^0.14.1",
+    "shikiji": "^0.6.10",
     "unified": "^11.0.2",
     "vite": "^4.0.4",
     "vitest": "^0.34.1",
