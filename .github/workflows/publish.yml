@@ -26,7 +26,7 @@ jobs:
         run: |
           VERSION=$(node tools/next-dev-version.js)
           npm --no-git-tag-version version ${VERSION}
-          cp package.json lib && cd lib
+          cp package.json readme.md lib && cd lib
           npm publish --tag dev
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
@@ -45,7 +45,7 @@ jobs:
         run: node tools/newest-tag.js --tag ${GITHUB_REF_NAME}
       - name: Publish
         run: |
-          cp package.json lib && cd lib
+          cp package.json readme.md lib && cd lib
           npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
