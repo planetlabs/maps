@@ -27,7 +27,7 @@ jobs:
           VERSION=$(node tools/next-dev-version.js)
           npm --no-git-tag-version version ${VERSION}
           cp package.json lib
-          npm publish --tag dev lib
+          npm publish lib --tag dev
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
   publish-tag:
