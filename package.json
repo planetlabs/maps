@@ -19,6 +19,11 @@
   "dependencies": {
     "react-reconciler": "^0.29.0"
   },
+  "peerDependencies": {
+    "ol": "*",
+    "ol-mapbox-style": "*",
+    "react": "*"
+  },
   "devDependencies": {
     "@astrojs/mdx": "^1.1.0",
     "@astrojs/react": "^3.0.2",
