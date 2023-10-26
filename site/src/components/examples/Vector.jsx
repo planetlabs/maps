@@ -7,7 +7,7 @@ import View from '../../../../lib/View.js';
 
 const format = new GeoJSON();
 
-function Basic() {
+function Vector() {
   const [urbanColor, setUrbanColor] = useState('gray');
 
   return (
@@ -47,4 +47,4 @@ function Basic() {
   );
 }
 
-export default Basic;
+export default Vector;
