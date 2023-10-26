@@ -1,6 +1,6 @@
 {
   "name": "@planet/maps",
-  "version": "9.0.1",
+  "version": "9.0.2",
   "description": "Declarative mapping components for React",
   "type": "module",
   "repository": {
