@@ -1,5 +1,5 @@
 import fs from 'fs-extra';
-import {directories} from '../config.js';
+import {directories} from '../lib/internal/config.js';
 import {dirname, join} from 'node:path';
 import {fileURLToPath} from 'node:url';
 

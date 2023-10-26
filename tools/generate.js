@@ -1,7 +1,7 @@
 import Mustache from 'mustache';
 import fs from 'fs-extra';
 import {ESLint} from 'eslint';
-import {directories, ignore} from '../config.js';
+import {LAYER, directories, ignore} from '../lib/internal/config.js';
 import {dirname, join} from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {resolve} from 'import-meta-resolve';
@@ -28,18 +28,40 @@ async function main() {
       String(await fs.readFile(join(templatesDir, `${type}.js.mustache`)));
 
     const names = await getNames(join(olDir, directories[type]));
+
+    const details = [];
     for (const name of names) {
       const commonPath = join(directories[type], name);
       if (ignore.includes(commonPath)) {
         continue;
       }
+
+      const importName = `OL${name.replace('.js', '')}`;
       const context = {
-        importName: `OL${name.replace('.js', '')}`,
+        importSpecifier: importName,
+        importName,
         importPath: `ol/${commonPath}`,
         elementType: type,
         constructorName: name.replace('.js', ''),
       };
+      details.push({commonPath, context});
+    }
 
+    // special case for ol-mapbox-style
+    if (type === LAYER) {
+      details.push({
+        commonPath: 'layer/MapboxVector.js',
+        context: {
+          importSpecifier: '{MapboxVectorLayer as OLMBVectorLayer}',
+          importName: 'OLMBVectorLayer',
+          importPath: 'ol-mapbox-style',
+          elementType: type,
+          constructorName: 'MapboxVector',
+        },
+      });
+    }
+
+    for (const {commonPath, context} of details) {
       let output = Mustache.render(templateData, context);
       const outputPath = join(libDir, commonPath);
       const results = await eslint.lintText(output, {filePath: outputPath});

@@ -38,7 +38,7 @@ const rawSource = await fs.readFile(
 );
 
 const source = await highlight(
-  rawSource.replaceAll('../../../../lib/', '@planet/maps/lib/')
+  rawSource.replaceAll('../../../../lib/', '@planet/maps/')
 );
 
 const {Content} = await example.render();

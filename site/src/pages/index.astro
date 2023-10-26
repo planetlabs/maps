@@ -3,11 +3,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import {highlight} from '../util/highlight.js';
 
 const source = await highlight(`
-import Map from '@planet/maps/lib/Map';
-import OSM from '@planet/maps/lib/source/OSM';
-import ScaleLine from '@planet/maps/lib/control/ScaleLine';
-import View from '@planet/maps/lib/View';
-import TileLayer from '@planet/maps/lib/layer/WebGLTile';
+import Map from '@planet/maps/Map';
+import OSM from '@planet/maps/source/OSM';
+import ScaleLine from '@planet/maps/control/ScaleLine';
+import View from '@planet/maps/View';
+import TileLayer from '@planet/maps/layer/WebGLTile';
 
 function MyApp() {
   return (
@@ -69,6 +69,13 @@ function MyApp() {
         <code>set</code> -prefixed method on the underlying instances. For example,
         updating the <code>center</code> prop of a <code>&lt;View&gt;</code> component
         will call <code>setCenter</code> on the underlying view.
+      </li>
+      <li>
+        🎁 As a convenience, the <code>@planet/maps/layer/MapboxVector</code> module
+        exports a component for constructing a <code>MapboxVectorLayer</code> from the
+        <a href="https://github.com/openlayers/ol-mapbox-style"><code>ol-mapbox-style</code> library</a>.
+        If you use this component, run <code>npm install ol-mapbox-style</code> to add
+        the dependency to your project.
       </li>
     </ul>
   </section>
