@@ -3,6 +3,10 @@
   "version": "9.0.1",
   "description": "Declarative mapping components for React",
   "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/planetlabs/maps.git"
+  },
   "scripts": {
     "pretest": "npm run lint",
     "test": "npm run test:rendering",
