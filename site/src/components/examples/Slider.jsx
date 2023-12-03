@@ -1,9 +1,8 @@
 import Map from '../../../../lib/Map.js';
-import OSM from '../../../../lib/source/OSM.js';
 import React, {useState} from 'react';
-import StadiaMaps from '../../../../lib/source/StadiaMaps.js';
 import TileLayer from '../../../../lib/layer/Tile.js';
 import View from '../../../../lib/View.js';
+import XYZ from '../../../../lib/source/XYZ.js';
 
 function Slider() {
   const [percent, updatePercent] = useState(50);
@@ -25,10 +24,24 @@ function Slider() {
       <Map>
         <View options={{center: [0, 0], zoom: 1}} />
         <TileLayer>
-          <OSM />
+          <XYZ
+            options={{
+              url: 'https://services.arcgisonline.com/arcgis/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}',
+              attributions:
+                'Tiles © <a href="https://services.arcgisonline.com/ArcGIS/' +
+                'rest/services/World_Topo_Map/MapServer">ArcGIS</a>',
+            }}
+          />
         </TileLayer>
         <TileLayer onPrerender={onPrerender} onPostrender={onPostrender}>
-          <StadiaMaps options={{layer: 'alidade_smooth_dark'}} />
+          <XYZ
+            options={{
+              url: 'https://services.arcgisonline.com/arcgis/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
+              attributions:
+                'Imagery © <a href="https://services.arcgisonline.com/ArcGIS/' +
+                'rest/services/World_Imagery/MapServer">ArcGIS</a>',
+            }}
+          />
         </TileLayer>
       </Map>
       <input
