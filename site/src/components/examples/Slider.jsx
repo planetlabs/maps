@@ -10,13 +10,9 @@ function Slider() {
 
   function onPrerender(event) {
     const ctx = event.context;
-    const width = (ctx.canvas.width * percent) / 100;
-    const start = 0;
-    const end = width;
-
     ctx.save();
     ctx.beginPath();
-    ctx.rect(start, 0, end, ctx.canvas.height);
+    ctx.rect(0, 0, (ctx.canvas.width * percent) / 100, ctx.canvas.height);
     ctx.clip();
   }
 
@@ -39,8 +35,10 @@ function Slider() {
         type="range"
         min={0}
         max={100}
+        step={0.25}
+        style={{width: '100%'}}
         value={percent}
-        onChange={event => updatePercent(event.target.value)}
+        onChange={event => updatePercent(parseInt(event.target.value))}
       />
     </>
   );
