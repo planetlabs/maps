@@ -58,7 +58,7 @@
     "shikiji": "^0.7.4",
     "unified": "^11.0.2",
     "vite": "^5.0.0",
-    "vitest": "^0.34.1",
+    "vitest": "^1.0.4",
     "yargs-parser": "^21.1.1"
   },
   "eslintConfig": {
