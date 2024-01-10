@@ -1,0 +1,19 @@
+---
+title: 'Solar Terminator'
+level: 2
+description: |
+  This example shows how the `<Vector>` source can be used to render a feature
+  that is updated with changes to a component's state variables.  In this example
+  a single feature is rendered with a polygon geometry representing the solar
+  terminator (dark where it is night and light where it is day).
+
+  The `day` and `hour` state variables are controlled by the sliders on the map.
+  A `useEffect` hook is called when these values change to calculate a new polygon
+  geometry representing the night.  The vector source is constructed with a single
+  feature whose geometry is updated with this new polygon using the
+  `feature.setGeometry()` method.
+---
+
+import SolarTerminator from '../../components/examples/SolarTerminator.jsx';
+
+<SolarTerminator client:only="react" />
