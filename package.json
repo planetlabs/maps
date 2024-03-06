@@ -46,7 +46,7 @@
     "import-meta-resolve": "^4.0.0",
     "jsdom": "^24.0.0",
     "mustache": "^4.2.0",
-    "ol": "^8.1.0",
+    "ol": "^9.0.0",
     "ol-mapbox-style": "^12.0.0",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
