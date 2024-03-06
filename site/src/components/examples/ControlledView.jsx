@@ -19,7 +19,7 @@ function formatViewState(viewState) {
   const EW = lon >= 0 ? 'E' : 'W';
   const zoom = round(viewState.zoom, 1);
   return `zoom: ${zoom}; lon: ${Math.abs(lon)}° ${EW}; lat: ${Math.abs(
-    lat
+    lat,
   )}° ${NS}`;
 }
 

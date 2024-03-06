@@ -29,7 +29,7 @@ describe('Simple smoke tests', () => {
       root.render(
         <Map ref={r => (mapRef = r)}>
           <VectorLayer />
-        </Map>
+        </Map>,
       );
     });
     expect(mapRef.getLayers().getLength()).toBe(1);

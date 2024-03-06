@@ -67,7 +67,7 @@ async function main() {
       const results = await eslint.lintText(output, {filePath: outputPath});
       if (results.length !== 1) {
         throw new Error(
-          `Expected a single linter result for ${outputPath}, got ${results.length}`
+          `Expected a single linter result for ${outputPath}, got ${results.length}`,
         );
       }
       const result = results[0];
