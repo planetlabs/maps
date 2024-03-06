@@ -35,7 +35,7 @@ async function miniRender(children, mapProps = {}) {
     ReactDOM.createRoot(container).render(
       <Map ref={r => (mapRef = r)} {...mapProps}>
         {children}
-      </Map>
+      </Map>,
     );
   });
   return mapRef;
@@ -59,7 +59,7 @@ describe('Static attachments', () => {
       <>
         <TileLayer properties={{name: 'first'}} />
         <TileLayer properties={{name: 'second'}} />
-      </>
+      </>,
     );
     expect(map.getLayers().getLength()).toBe(2);
     const firstLayer = map.getLayers().getArray()[0];
@@ -74,7 +74,7 @@ describe('Static attachments', () => {
         <VectorLayer />
         <TileLayer />
         <ImageLayer />
-      </>
+      </>,
     );
     expect(map.getLayers().getLength()).toBe(3);
     expect(map.getLayers().getArray()[0]).toBeInstanceOf(olVectorLayer);
@@ -88,7 +88,7 @@ describe('Static attachments', () => {
     const map = await miniRender(
       <VectorLayer>
         <VectorSource features={features} />
-      </VectorLayer>
+      </VectorLayer>,
     );
 
     const src = map.getLayers().item(0).getSource();
@@ -110,7 +110,7 @@ describe('Static attachments', () => {
       <>
         <MyLayers />
         <ImageLayer />
-      </>
+      </>,
     );
     expect(map.getLayers().getLength()).toBe(3);
     expect(map.getLayers().getArray()[0]).toBeInstanceOf(olVectorLayer);
@@ -124,14 +124,14 @@ describe('Static attachments', () => {
         <DragPanInteraction />
         <MouseWheelZoomInteraction />
       </>,
-      {interactions: []}
+      {interactions: []},
     );
     expect(map.getInteractions().getArray()).toHaveLength(2);
     expect(map.getInteractions().getArray()[0]).toBeInstanceOf(
-      olDragPanInteraction
+      olDragPanInteraction,
     );
     expect(map.getInteractions().getArray()[1]).toBeInstanceOf(
-      olMouseWheelZoomInteraction
+      olMouseWheelZoomInteraction,
     );
   });
 
@@ -141,12 +141,12 @@ describe('Static attachments', () => {
         <ZoomControl />
         <AttributionControl />
       </>,
-      {controls: []}
+      {controls: []},
     );
     expect(map.getControls().getArray()).toHaveLength(2);
     expect(map.getControls().getArray()[0]).toBeInstanceOf(olZoomControl);
     expect(map.getControls().getArray()[1]).toBeInstanceOf(
-      olAttributionControl
+      olAttributionControl,
     );
   });
 
@@ -164,7 +164,7 @@ describe('Static attachments', () => {
             url: 'http://anon.xyz',
           }}
         />
-      </ImageLayer>
+      </ImageLayer>,
     );
     expect(map.getLayers().item(0).getSource()).toBeInstanceOf(olStatic);
     const src = map.getLayers().item(0).getSource();
@@ -230,10 +230,10 @@ describe('Static attachments', () => {
     expect(map.getLayers().getArray()[0].getSource().test.skip).toBe(0);
     expect(map.getLayers().getArray()[1].getSource().test.skip).toBe(1);
     expect(map.getLayers().getArray()[0].getSource().getUrl()).toMatch(
-      new RegExp('http://aaa.com?')
+      new RegExp('http://aaa.com?'),
     );
     expect(map.getLayers().getArray()[1].getSource().getUrl()).toMatch(
-      new RegExp('http://bbb.com?')
+      new RegExp('http://bbb.com?'),
     );
     await act(async () => externalEvent(0.9));
     await act(async () => externalEvent(0.7));
@@ -242,10 +242,10 @@ describe('Static attachments', () => {
     expect(map.getLayers().getArray()[0].getSource().test.skip).toBe(0);
     expect(map.getLayers().getArray()[1].getSource().test.skip).toBe(1);
     expect(map.getLayers().getArray()[0].getSource().getUrl()).toMatch(
-      new RegExp('http://aaa.com?')
+      new RegExp('http://aaa.com?'),
     );
     expect(map.getLayers().getArray()[1].getSource().getUrl()).toMatch(
-      new RegExp('http://bbb.com?')
+      new RegExp('http://bbb.com?'),
     );
   });
 });
