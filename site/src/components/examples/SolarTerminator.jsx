@@ -40,7 +40,7 @@ function getDate(year, day, hour) {
 function SolarTerminator() {
   const [day, updateDay] = useState(getDayOfYear(now));
   const [hour, updateHour] = useState(
-    now.getUTCHours() + now.getUTCMinutes() / 60
+    now.getUTCHours() + now.getUTCMinutes() / 60,
   );
 
   useEffect(() => {

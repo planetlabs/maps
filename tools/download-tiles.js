@@ -73,7 +73,7 @@ async function download({url, min, max, concurrency, out}) {
         jobs.push(
           semaphore(async () => {
             return downloadTile(tileUrl, outputPath);
-          })
+          }),
         );
       }
     }
@@ -91,5 +91,5 @@ async function downloadTile(url, outputPath) {
 }
 
 main(parseArgs(process.argv.slice(2))).catch(err =>
-  process.stderr.write(err.stack, () => process.exit(1))
+  process.stderr.write(err.stack, () => process.exit(1)),
 );
