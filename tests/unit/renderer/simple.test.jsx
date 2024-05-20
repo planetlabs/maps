@@ -1,9 +1,9 @@
 // @vitest-environment jsdom
 import Map from '../../../lib/Map.js';
-import OLMap from 'ol/Map';
+import OLMap from 'ol/Map.js';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import VectorLayer from '../../../lib/layer/Vector';
+import VectorLayer from '../../../lib/layer/Vector.js';
 import {act} from 'react-dom/test-utils';
 import {beforeEach, describe, expect, test} from 'vitest';
 
