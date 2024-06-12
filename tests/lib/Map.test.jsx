@@ -1,6 +1,7 @@
 import Map from '../../lib/Map.js';
 import OLMap from 'ol/Map.js';
 import React from 'react';
+import Zoom from '../../lib/control/Zoom.js';
 import {afterEach, describe, expect, it} from 'vitest';
 import {cleanup, render, screen} from '@testing-library/react';
 
@@ -23,13 +24,54 @@ describe('<Map>', () => {
   });
 
   it('accepts a ref for accessing the map', () => {
-    let mapRef;
+    let map;
     render(
       <div style={style}>
-        <Map ref={r => (mapRef = r)} />
+        <Map ref={r => (map = r)} />
       </div>,
     );
 
-    expect(mapRef).toBeInstanceOf(OLMap);
+    expect(map).toBeInstanceOf(OLMap);
+  });
+
+  it('creates a map with the default controls', () => {
+    let map;
+    render(
+      <div style={style}>
+        <Map ref={r => (map = r)} />
+      </div>,
+    );
+
+    expect(map).toBeInstanceOf(OLMap);
+    const controls = map.getControls();
+    expect(controls.getLength()).toBe(3);
+  });
+
+  it('allows custom controls to be passed', () => {
+    let map;
+    render(
+      <div style={style}>
+        <Map ref={r => (map = r)} controls={[]}>
+          <Zoom options={{className: 'custom'}} />
+        </Map>
+      </div>,
+    );
+
+    expect(map).toBeInstanceOf(OLMap);
+    const controls = map.getControls();
+    expect(controls.getLength()).toBe(1);
+  });
+
+  it('allows options to be passed', () => {
+    let map;
+    render(
+      <div style={style}>
+        <Map ref={r => (map = r)} options={{controls: []}} />
+      </div>,
+    );
+
+    expect(map).toBeInstanceOf(OLMap);
+    const controls = map.getControls();
+    expect(controls.getLength()).toBe(0);
   });
 });
