@@ -73,4 +73,31 @@ describe('<View>', () => {
     const center = await onChangeCenter.called;
     expect(center).toEqual([10, 20]);
   });
+
+  it('accepts a change listener with onChange-center prop', async () => {
+    const onChangeCenter = callback(event => {
+      const view = event.target;
+      return view.getCenter();
+    });
+
+    let map;
+    render(
+      <div style={style}>
+        <Map ref={r => (map = r)}>
+          <View
+            center={[1, 2]}
+            zoom={3}
+            rotation={4}
+            onChange-center={onChangeCenter.handler}
+          />
+        </Map>
+      </div>,
+    );
+
+    const view = map.getView();
+    view.setCenter([10, 20]);
+
+    const center = await onChangeCenter.called;
+    expect(center).toEqual([10, 20]);
+  });
 });
