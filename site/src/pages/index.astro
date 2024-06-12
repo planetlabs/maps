@@ -62,7 +62,9 @@ function MyApp() {
       <li>
         Listeners for OpenLayers events can be added with
         <code>on</code> -prefixed props. For example, <code>onChange</code> will
-        be called for <code>change</code> events.
+        be called for <code>change</code> events. Colons in props can cause issues
+        with React, so we also expose props like <code>onChange-center</code> along 
+        with <code>onChange:center</code>.
       </li>
       <li>
         All other props can be updated if there is a corresponding
