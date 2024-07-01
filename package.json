@@ -40,7 +40,7 @@
     "@vitest/browser": "^1.6.0",
     "astro": "^4.0.3",
     "es-main": "^1.2.0",
-    "eslint": "^8.57.0",
+    "eslint": "^9.6.0",
     "eslint-config-planet": "^22.1.0",
     "eslint-plugin-astro": "^1.2.0",
     "eslint-plugin-mdx": "^3.0.0",
