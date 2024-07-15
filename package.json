@@ -37,7 +37,7 @@
     "@testing-library/react": "^16.0.0",
     "@types/react": "^18.0.27",
     "@types/react-dom": "^18.0.10",
-    "@vitest/browser": "^1.6.0",
+    "@vitest/browser": "^2.0.3",
     "astro": "^4.0.3",
     "es-main": "^1.2.0",
     "eslint": "^8.57.0",
@@ -60,7 +60,7 @@
     "shikiji": "^0.10.2",
     "unified": "^11.0.2",
     "vite": "^5.2.12",
-    "vitest": "^1.6.0",
+    "vitest": "^2.0.3",
     "yargs-parser": "^21.1.1"
   },
   "eslintConfig": {
