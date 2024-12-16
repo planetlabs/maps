@@ -30,7 +30,7 @@
     "react": "*"
   },
   "devDependencies": {
-    "@astrojs/mdx": "^3.0.0",
+    "@astrojs/mdx": "^4.0.2",
     "@astrojs/react": "^4.0.0",
     "@octokit/rest": "^21.0.0",
     "@playwright/test": "^1.25.2",
@@ -38,7 +38,7 @@
     "@types/react": "^18.0.27",
     "@types/react-dom": "^18.0.10",
     "@vitest/browser": "^2.0.3",
-    "astro": "^4.0.3",
+    "astro": "^5.0.5",
     "es-main": "^1.2.0",
     "eslint": "^8.57.0",
     "eslint-config-planet": "^22.1.0",
