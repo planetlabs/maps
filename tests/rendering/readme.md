@@ -21,7 +21,7 @@ If you are not running Linux, the easiest way to generate expected snapshots is 
 docker run --rm -it \
   --mount type=bind,source="$(pwd)",target=/work/ \
   --mount type=volume,source=exclude,target=/work/node_modules/ \
-  mcr.microsoft.com/playwright:v1.22.2-focal bash
+  mcr.microsoft.com/playwright:v1.49.0-noble bash
 
 cd work
 npm install
