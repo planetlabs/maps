@@ -79,6 +79,7 @@
         {
           "ignore": [
             "astro:content",
+            "astro/config",
             "@astrojs/*",
             "@octokit/rest"
           ]
