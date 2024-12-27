@@ -36,7 +36,7 @@
     "@playwright/test": "^1.25.2",
     "@testing-library/react": "^16.0.0",
     "@types/react": "^19.0.2",
-    "@types/react-dom": "^18.0.10",
+    "@types/react-dom": "^19.0.2",
     "@vitest/browser": "^2.0.3",
     "astro": "^4.0.3",
     "es-main": "^1.2.0",
