@@ -22,7 +22,7 @@
   },
   "license": "Apache-2.0",
   "dependencies": {
-    "react-reconciler": "^0.29.0"
+    "react-reconciler": "^0.31.0"
   },
   "peerDependencies": {
     "ol": "*",
@@ -35,8 +35,8 @@
     "@octokit/rest": "^21.0.0",
     "@playwright/test": "^1.25.2",
     "@testing-library/react": "^16.0.0",
-    "@types/react": "^18.0.27",
-    "@types/react-dom": "^18.0.10",
+    "@types/react": "^19.0.2",
+    "@types/react-dom": "^19.0.2",
     "@vitest/browser": "^2.0.3",
     "astro": "^4.0.3",
     "es-main": "^1.2.0",
@@ -51,8 +51,8 @@
     "ol": "^10.3.0",
     "ol-mapbox-style": "^12.3.5",
     "prop-types": "^15.8.1",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
     "remark-html": "^16.0.1",
     "remark-parse": "^11.0.0",
     "semapro": "^1.1.0",
