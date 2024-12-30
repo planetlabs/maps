@@ -27,7 +27,7 @@
   "peerDependencies": {
     "ol": "*",
     "ol-mapbox-style": "*",
-    "react": "*"
+    "react": ">=19"
   },
   "devDependencies": {
     "@astrojs/mdx": "^4.0.3",
@@ -100,13 +100,25 @@
       },
       {
         "files": [
-          "*.jsx"
+          "*.jsx", "*.js"
         ],
         "extends": [
           "planet/react"
         ],
         "rules": {
-          "import/named": "off"
+          "import/named": "off",
+          "import/default": "off",
+          "import/no-unresolved": [
+            "error",
+            {
+              "ignore": [
+                "astro:content",
+                "astro/config",
+                "@astrojs/*",
+                "@octokit/rest"
+              ]
+            }
+          ]
         }
       },
       {
