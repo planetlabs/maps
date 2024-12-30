@@ -13,11 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {{importName}} from '{{importPath}}';
-import {createElement, forwardRef} from 'react';
+import {{importSpecifier}} from '{{importPath}}';
+import {createElement} from 'react';
 
-const {{constructorName}} = forwardRef((props, ref) => {
-  return createElement('{{elementType}}', {cls: {{importName}}, ref, ...props});
-});
-
-export default {{constructorName}};
+export default function {{constructorName}}(props) {
+  return createElement('{{elementType}}', {cls: {{importName}}, ...props});
+}

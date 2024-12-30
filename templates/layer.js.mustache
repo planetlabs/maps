@@ -14,15 +14,13 @@
  * limitations under the License.
  */
 import {{importSpecifier}} from '{{importPath}}';
-import {createElement, forwardRef} from 'react';
+import {createElement} from 'react';
 import propTypes from 'prop-types';
 
-const {{constructorName}} = forwardRef(({children, ...props}, ref) => {
-  return createElement('{{elementType}}', {cls: {{importName}}, ref, ...props}, children);
-});
+export default function {{constructorName}}({children, ...props}) {
+  return createElement('{{elementType}}', {cls: {{importName}}, ...props}, children);
+}
 
 {{constructorName}}.propTypes = {
   children: propTypes.node,
 };
-
-export default {{constructorName}};
