@@ -37,7 +37,7 @@
     "@testing-library/react": "^16.0.0",
     "@types/react": "^19.0.2",
     "@types/react-dom": "^19.0.2",
-    "@vitest/browser": "^2.0.3",
+    "@vitest/browser": "^3.0.3",
     "astro": "^5.1.1",
     "es-main": "^1.2.0",
     "eslint": "^8.57.0",
@@ -60,7 +60,7 @@
     "shikiji": "^0.10.2",
     "unified": "^11.0.2",
     "vite": "^6.0.1",
-    "vitest": "^2.0.3",
+    "vitest": "^3.0.3",
     "yargs-parser": "^21.1.1"
   },
   "eslintConfig": {
@@ -100,7 +100,8 @@
       },
       {
         "files": [
-          "*.jsx", "*.js"
+          "*.jsx",
+          "*.js"
         ],
         "extends": [
           "planet/react"
