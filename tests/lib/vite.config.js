@@ -3,9 +3,13 @@ import {defineConfig} from 'vite';
 export default defineConfig({
   test: {
     browser: {
+      instances: [
+        {
+          browser: 'chromium',
+        },
+      ],
       enabled: true,
       provider: 'playwright',
-      name: 'chromium',
       headless: true,
     },
   },
