@@ -1,9 +1,9 @@
-import Map from '../../../../lib/Map.js';
 import React from 'react';
+import {createRoot} from 'react-dom/client';
+import Map from '../../../../lib/Map.js';
 import View from '../../../../lib/View.js';
 import WebGLTile from '../../../../lib/layer/WebGLTile.js';
 import XYZ from '../../../../lib/source/XYZ.js';
-import {createRoot} from 'react-dom/client';
 
 function App() {
   return (

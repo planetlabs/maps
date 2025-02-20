@@ -1,6 +1,6 @@
 import esMain from 'es-main';
-import parseArgs from 'yargs-parser';
 import semver from 'semver';
+import parseArgs from 'yargs-parser';
 import {getLatestRelease} from './get-latest-release.js';
 
 /**

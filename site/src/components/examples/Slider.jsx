@@ -1,7 +1,7 @@
-import Map from '../../../../lib/Map.js';
 import React, {useState} from 'react';
-import TileLayer from '../../../../lib/layer/Tile.js';
+import Map from '../../../../lib/Map.js';
 import View from '../../../../lib/View.js';
+import TileLayer from '../../../../lib/layer/Tile.js';
 import XYZ from '../../../../lib/source/XYZ.js';
 
 function Slider() {

@@ -1,10 +1,10 @@
 import GeoJSON from 'ol/format/GeoJSON.js';
-import Layer from '../../../../lib/layer/Vector.js';
-import Map from '../../../../lib/Map.js';
-import React, {useState} from 'react';
-import Source from '../../../../lib/source/Vector.js';
-import View from '../../../../lib/View.js';
 import {useGeographic as geographic} from 'ol/proj.js';
+import React, {useState} from 'react';
+import Map from '../../../../lib/Map.js';
+import View from '../../../../lib/View.js';
+import Layer from '../../../../lib/layer/Vector.js';
+import Source from '../../../../lib/source/Vector.js';
 
 geographic();
 

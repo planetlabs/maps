@@ -1,30 +1,30 @@
 // @vitest-environment jsdom
-import AttributionControl from '../../../lib/control/Attribution.js';
-import DragPanInteraction from '../../../lib/interaction/DragPan.js';
 import Feature from 'ol/Feature.js';
-import ImageLayer from '../../../lib/layer/Image.js';
-import ImageStatic from '../../../lib/source/ImageStatic.js';
-import Map from '../../../lib/Map.js';
-import MouseWheelZoomInteraction from '../../../lib/interaction/MouseWheelZoom.js';
-import Point from 'ol/geom/Point.js';
-import React, {useState} from 'react';
-import ReactDOM from 'react-dom/client';
-import TileLayer from '../../../lib/layer/Tile.js';
-import VectorLayer from '../../../lib/layer/Vector.js';
-import VectorSource from '../../../lib/source/Vector.js';
-import View from '../../../lib/View.js';
-import ZoomControl from '../../../lib/control/Zoom.js';
 import olAttributionControl from 'ol/control/Attribution.js';
+import olZoomControl from 'ol/control/Zoom.js';
+import Point from 'ol/geom/Point.js';
 import olDragPanInteraction from 'ol/interaction/DragPan.js';
-import olImageLayer from 'ol/layer/Image.js';
 import olMouseWheelZoomInteraction from 'ol/interaction/MouseWheelZoom.js';
-import olStatic from 'ol/source/ImageStatic.js';
+import olImageLayer from 'ol/layer/Image.js';
 import olTileLayer from 'ol/layer/Tile.js';
 import olVectorLayer from 'ol/layer/Vector.js';
+import olStatic from 'ol/source/ImageStatic.js';
 import olVectorSource from 'ol/source/Vector.js';
-import olZoomControl from 'ol/control/Zoom.js';
+import React, {useState} from 'react';
+import ReactDOM from 'react-dom/client';
 import {act} from 'react-dom/test-utils';
 import {describe, expect, test} from 'vitest';
+import Map from '../../../lib/Map.js';
+import View from '../../../lib/View.js';
+import AttributionControl from '../../../lib/control/Attribution.js';
+import ZoomControl from '../../../lib/control/Zoom.js';
+import DragPanInteraction from '../../../lib/interaction/DragPan.js';
+import MouseWheelZoomInteraction from '../../../lib/interaction/MouseWheelZoom.js';
+import ImageLayer from '../../../lib/layer/Image.js';
+import TileLayer from '../../../lib/layer/Tile.js';
+import VectorLayer from '../../../lib/layer/Vector.js';
+import ImageStatic from '../../../lib/source/ImageStatic.js';
+import VectorSource from '../../../lib/source/Vector.js';
 
 global.IS_REACT_ACT_ENVIRONMENT = true;
 

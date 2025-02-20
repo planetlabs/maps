@@ -1,8 +1,8 @@
-import Map from '../../../../lib/Map.js';
-import OSM from '../../../../lib/source/OSM.js';
 import React, {useCallback, useState} from 'react';
-import TileLayer from '../../../../lib/layer/WebGLTile.js';
+import Map from '../../../../lib/Map.js';
 import View from '../../../../lib/View.js';
+import TileLayer from '../../../../lib/layer/WebGLTile.js';
+import OSM from '../../../../lib/source/OSM.js';
 
 function MapButton(props) {
   return <button {...props}>⛶ reset view</button>;

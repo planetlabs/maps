@@ -1,10 +1,10 @@
-import Image from '../../../../lib/layer/Image.js';
-import ImageStatic from '../../../../lib/source/ImageStatic.js';
-import Map from '../../../../lib/Map.js';
+import {getCenter} from 'ol/extent.js';
 import Projection from 'ol/proj/Projection.js';
 import React from 'react';
+import Map from '../../../../lib/Map.js';
 import View from '../../../../lib/View.js';
-import {getCenter} from 'ol/extent.js';
+import Image from '../../../../lib/layer/Image.js';
+import ImageStatic from '../../../../lib/source/ImageStatic.js';
 
 const extent = [0, 0, 1024, 968];
 const projection = new Projection({

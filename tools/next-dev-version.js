@@ -1,9 +1,9 @@
+import {dirname, join} from 'node:path';
+import process from 'node:process';
+import {fileURLToPath} from 'node:url';
 import esMain from 'es-main';
 import fse from 'fs-extra';
-import process from 'node:process';
 import semver from 'semver';
-import {dirname, join} from 'node:path';
-import {fileURLToPath} from 'node:url';
 
 const baseDir = dirname(fileURLToPath(import.meta.url));
 

@@ -1,10 +1,10 @@
-import Map from '../../lib/Map.js';
+import {cleanup, render} from '@testing-library/react';
 import OLView from 'ol/View.js';
 import React from 'react';
-import View from '../../lib/View.js';
 import {afterEach, describe, expect, it} from 'vitest';
+import Map from '../../lib/Map.js';
+import View from '../../lib/View.js';
 import {callback} from './util.js';
-import {cleanup, render} from '@testing-library/react';
 
 afterEach(() => {
   cleanup();
