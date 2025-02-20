@@ -40,8 +40,8 @@
     "@vitest/browser": "^3.0.3",
     "astro": "^5.1.1",
     "es-main": "^1.2.0",
-    "eslint": "^8.57.0",
-    "eslint-config-planet": "^22.1.0",
+    "eslint": "^9.20.1",
+    "eslint-config-planet": "^23.1.0",
     "eslint-plugin-astro": "^1.2.0",
     "eslint-plugin-mdx": "^3.0.0",
     "eslint-plugin-react": "^7.32.1",
@@ -62,75 +62,5 @@
     "vite": "^6.0.1",
     "vitest": "^3.0.3",
     "yargs-parser": "^21.1.1"
-  },
-  "eslintConfig": {
-    "extends": [
-      "planet"
-    ],
-    "parserOptions": {
-      "ecmaVersion": "latest",
-      "sourceType": "module"
-    },
-    "rules": {
-      "import/named": "off",
-      "import/default": "off",
-      "import/no-unresolved": [
-        "error",
-        {
-          "ignore": [
-            "astro:content",
-            "astro/config",
-            "@astrojs/*",
-            "@octokit/rest"
-          ]
-        }
-      ]
-    },
-    "overrides": [
-      {
-        "files": [
-          "*.astro"
-        ],
-        "extends": [
-          "plugin:astro/recommended"
-        ],
-        "rules": {
-          "prettier/prettier": "off"
-        }
-      },
-      {
-        "files": [
-          "*.jsx",
-          "*.js"
-        ],
-        "extends": [
-          "planet/react"
-        ],
-        "rules": {
-          "import/named": "off",
-          "import/default": "off",
-          "import/no-unresolved": [
-            "error",
-            {
-              "ignore": [
-                "astro:content",
-                "astro/config",
-                "@astrojs/*",
-                "@octokit/rest"
-              ]
-            }
-          ]
-        }
-      },
-      {
-        "files": [
-          "*.mdx"
-        ],
-        "extends": [
-          "plugin:mdx/recommended",
-          "planet/react"
-        ]
-      }
-    ]
   }
 }

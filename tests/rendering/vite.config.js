@@ -1,7 +1,7 @@
-import directoryListing from '../../tools/directory-listing.js';
-import {defineConfig} from 'vite';
 import {dirname, join} from 'node:path';
 import {fileURLToPath} from 'node:url';
+import {defineConfig} from 'vite';
+import directoryListing from '../../tools/directory-listing.js';
 
 const casesDir = join(dirname(fileURLToPath(import.meta.url)), 'cases');
 

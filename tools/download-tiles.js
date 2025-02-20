@@ -1,7 +1,7 @@
-import createSemaphore from 'semapro';
-import fs from 'fs-extra';
-import parseArgs from 'yargs-parser';
 import {dirname, join, relative} from 'node:path';
+import fs from 'fs-extra';
+import createSemaphore from 'semapro';
+import parseArgs from 'yargs-parser';
 
 const cwd = process.cwd();
 const cmd = relative(cwd, process.argv[1]);

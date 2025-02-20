@@ -1,4 +1,4 @@
-import {list} from 'virtual:directory-listing'; // eslint-disable-line import/no-unresolved
+import {list} from 'virtual:directory-listing';
 
 const element = document.getElementById('list');
 

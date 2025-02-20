@@ -1,9 +1,9 @@
-import Map from '../../lib/Map.js';
+import {cleanup, render, screen} from '@testing-library/react';
 import OLMap from 'ol/Map.js';
 import React from 'react';
-import Zoom from '../../lib/control/Zoom.js';
 import {afterEach, describe, expect, it} from 'vitest';
-import {cleanup, render, screen} from '@testing-library/react';
+import Map from '../../lib/Map.js';
+import Zoom from '../../lib/control/Zoom.js';
 
 afterEach(() => {
   cleanup();
