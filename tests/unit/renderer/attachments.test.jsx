@@ -1,4 +1,3 @@
-// @vitest-environment jsdom
 import Feature from 'ol/Feature.js';
 import olAttributionControl from 'ol/control/Attribution.js';
 import olZoomControl from 'ol/control/Zoom.js';
@@ -10,9 +9,8 @@ import olTileLayer from 'ol/layer/Tile.js';
 import olVectorLayer from 'ol/layer/Vector.js';
 import olStatic from 'ol/source/ImageStatic.js';
 import olVectorSource from 'ol/source/Vector.js';
-import React, {useState} from 'react';
+import React, {act, useState} from 'react';
 import ReactDOM from 'react-dom/client';
-import {act} from 'react-dom/test-utils';
 import {describe, expect, test} from 'vitest';
 import Map from '../../../lib/Map.js';
 import View from '../../../lib/View.js';
