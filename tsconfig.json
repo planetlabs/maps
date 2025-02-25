@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "allowJs": true,
+    "checkJs": true,
+    "noEmit": true,
+    "skipLibCheck": true,
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    "noImplicitAny": true,
+    "jsx": "react"
+  },
+  "include": [
+    "lib/**/*.js",
+    "site/src/env.d.ts",
+    "site/src/**/*.js",
+    "site/src/**/*.jsx"
+  ]
+}

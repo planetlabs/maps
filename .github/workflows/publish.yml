@@ -45,6 +45,7 @@ jobs:
         run: node tools/newest-tag.js --tag ${GITHUB_REF_NAME}
       - name: Publish
         run: |
+          npm run build:types
           cp package.json readme.md lib && cd lib
           npm publish
         env:

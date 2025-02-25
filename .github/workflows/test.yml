@@ -36,5 +36,5 @@ jobs:
       - name: Run Tests
         run: npm test
 
-      - name: Test the Website Build
+      - name: Test Build
         run: npm run build

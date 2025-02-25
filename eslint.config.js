@@ -7,6 +7,7 @@ export default [
   ...planetReactConfig,
   {
     rules: {
+      'react/prop-types': 'off',
       'import/no-unresolved': [
         'error',
         {

@@ -51,10 +51,16 @@ function eclipticObliquity(julianDay) {
 }
 
 /**
+ * @typedef {Object} EquatorialPosition
+ * @property {number} alpha The alpha value.
+ * @property {number} delta The delta value.
+ */
+
+/**
  * Compute the Sun's equatorial position from its ecliptic position.
  * @param {number} sunEclLon Sun longitude in degrees.
  * @param {number} eclObliq Ecliptic position in degrees.
- * @return {number} Position in degrees.
+ * @return {EquatorialPosition} The sun's equatorial position.
  */
 function sunEquatorialPosition(sunEclLon, eclObliq) {
   const rad2deg = 180 / Math.PI;
@@ -76,20 +82,18 @@ function sunEquatorialPosition(sunEclLon, eclObliq) {
 
 /**
  * Get night-day terminator coordinates.
- * @param {string} time DateTime string (default now).
+ * @param {Date} date The date.
  * @param {string} projection The projection identifier.
  * @return {Polygon} A polygon representing the night.
  */
-export function getNightGeometry(time, projection) {
+export function getNightGeometry(date, projection) {
   const step = 1;
   const rad2deg = 180 / Math.PI;
   const deg2rad = Math.PI / 180;
 
-  const date = time ? new Date(time) : new Date();
-
   // Calculate the present UTC Julian Date.
   // Function is valid after the beginning of the UNIX epoch 1970-01-01 and ignores leap seconds.
-  const julianDay = date / 86400000 + 2440587.5;
+  const julianDay = date.valueOf() / 86400000 + 2440587.5;
 
   // Calculate Greenwich Mean Sidereal Time (low precision equation).
   // http://aa.usno.navy.mil/faq/docs/GAST.php
