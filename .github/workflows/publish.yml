@@ -26,6 +26,7 @@ jobs:
         run: |
           VERSION=$(node tools/next-dev-version.js)
           npm --no-git-tag-version version ${VERSION}
+          npm run build:types
           cp package.json readme.md lib && cd lib
           npm publish --tag dev
         env:
