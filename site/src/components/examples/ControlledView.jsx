@@ -7,11 +7,24 @@ import OSM from '../../../../lib/source/OSM.js';
 
 geographic();
 
+/**
+ * @param {number} num A number.
+ * @param {number} digits The number of decimal places to retain.
+ */
 function round(num, digits) {
   const factor = Math.pow(10, digits);
   return Math.round(num * factor) / factor;
 }
 
+/**
+ * @typedef {Object} ViewState
+ * @property {Array<number>} center The view center.
+ * @property {number} zoom The zoom level.
+ */
+
+/**
+ * @param {ViewState} viewState The view State.
+ */
 function formatViewState(viewState) {
   const lon = round(viewState.center[0], 2);
   const lat = round(viewState.center[1], 2);
@@ -26,13 +39,19 @@ function formatViewState(viewState) {
 function ControlledView() {
   const [viewState, setViewState] = useState({center: [0, 0], zoom: 1});
 
-  const onViewChange = useCallback(event => {
-    const view = event.target;
-    setViewState({
-      center: view.getCenter(),
-      zoom: view.getZoom(),
-    });
-  }, []);
+  const onViewChange = useCallback(
+    /**
+     * @param {import("ol/events/Event.js").default} event The view change event.
+     */
+    event => {
+      const view = event.target;
+      setViewState({
+        center: view.getCenter(),
+        zoom: view.getZoom(),
+      });
+    },
+    [],
+  );
 
   return (
     <div style={{position: 'relative', height: '100%'}}>

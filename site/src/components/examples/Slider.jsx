@@ -7,6 +7,9 @@ import XYZ from '../../../../lib/source/XYZ.js';
 function Slider() {
   const [percent, updatePercent] = useState(50);
 
+  /**
+   * @param {any} event The pre-render event.
+   */
   function onPrerender(event) {
     const ctx = event.context;
     ctx.save();
@@ -15,6 +18,9 @@ function Slider() {
     ctx.clip();
   }
 
+  /**
+   * @param {any} event The post-render event.
+   */
   function onPostrender(event) {
     event.context.restore();
   }

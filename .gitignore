@@ -4,3 +4,5 @@ node_modules/
 /tests/unit/coverage/
 /site/.astro/
 /site/dist/
+*.d.ts
+*.d.ts.map

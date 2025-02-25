@@ -6,12 +6,22 @@ import TileLayer from '../../../../lib/layer/WebGLTile.js';
 import OSM from '../../../../lib/source/OSM.js';
 
 function Popup() {
-  const [popupElement, setPopupElement] = useState(null);
-  const [popupPosition, setPopupPosition] = useState(null);
+  const [popupElement, setPopupElement] = useState(
+    /** @type {HTMLElement?} */ (null),
+  );
+  const [popupPosition, setPopupPosition] = useState(
+    /** @type {Array<number>?} */ (null),
+  );
 
-  const onMapSingleClick = useCallback(event => {
-    setPopupPosition(event.coordinate);
-  }, []);
+  const onMapSingleClick = useCallback(
+    /**
+     * @param {import("ol/MapBrowserEvent.js").default<MouseEvent>} event The event
+     */
+    event => {
+      setPopupPosition(event.coordinate);
+    },
+    [],
+  );
 
   return (
     <>

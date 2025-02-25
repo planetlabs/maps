@@ -5,6 +5,9 @@ const highlighterPromise = getHighlighter({
   langs: ['javascript'],
 });
 
+/**
+ * @param {string} code The code to highlight.
+ */
 export async function highlight(code) {
   const highlighter = await highlighterPromise;
   return highlighter.codeToHtml(code, {

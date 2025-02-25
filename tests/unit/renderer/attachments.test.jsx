@@ -173,7 +173,6 @@ describe('Static attachments', () => {
     let counter = 0;
     let externalEvent = () => {};
 
-    // eslint-disable-next-line react/prop-types
     function OrthoImageSource({url}) {
       return (
         <ImageStatic
@@ -191,7 +190,7 @@ describe('Static attachments', () => {
         />
       );
     }
-    // eslint-disable-next-line react/prop-types
+
     function MyImageLayer({children, opacity = 1}) {
       return <ImageLayer opacity={opacity}>{children}</ImageLayer>;
     }

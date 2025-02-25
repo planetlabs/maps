@@ -1,3 +1,4 @@
+{{=<% %>=}}
 /**
  * Copyright Planet Labs PBC
  *
@@ -13,9 +14,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {{importSpecifier}} from '{{importPath}}';
+import <% importSpecifier %> from '<% importPath %>';
 import {createElement} from 'react';
 
-export default function {{constructorName}}(props) {
-  return createElement('{{elementType}}', {cls: {{importName}}, ...props});
+/**
+ * @typedef {Object} <% constructorName %>Props
+ * @property {ConstructorParameters<typeof <% importName %>>[0]} [options] The interaction options.
+ */
+
+/**
+ * @param {<% constructorName %>Props | Object<string, any>} props The interaction props.
+ */
+export default function <% constructorName %>(props) {
+  return createElement('<% elementType %>', {cls: <% importName %>, ...props});
 }

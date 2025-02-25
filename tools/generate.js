@@ -55,6 +55,7 @@ async function main() {
           importSpecifier: '{MapboxVectorLayer as OLMBVectorLayer}',
           importName: 'OLMBVectorLayer',
           importPath: 'ol-mapbox-style',
+          thirdParty: true,
           elementType: type,
           constructorName: 'MapboxVector',
         },

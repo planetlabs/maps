@@ -25,9 +25,9 @@ function getDayOfYear(date) {
 }
 
 /**
- * @param {number} UTC year.
- * @param {number} UTC day number (starting with 1).
- * @param {number} UTC hour.
+ * @param {number} year UTC year.
+ * @param {number} day UTC day number (starting with 1).
+ * @param {number} hour UTC hour.
  * @return {Date} The date.
  */
 function getDate(year, day, hour) {
