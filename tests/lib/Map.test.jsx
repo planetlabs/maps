@@ -1,6 +1,6 @@
 import {cleanup, render, screen} from '@testing-library/react';
 import OLMap from 'ol/Map.js';
-import React from 'react';
+import React, {useState} from 'react';
 import {afterEach, describe, expect, it} from 'vitest';
 import Map from '../../lib/Map.js';
 import Zoom from '../../lib/control/Zoom.js';
@@ -73,5 +73,43 @@ describe('<Map>', () => {
     expect(map).toBeInstanceOf(OLMap);
     const controls = map.getControls();
     expect(controls.getLength()).toBe(0);
+  });
+
+  it('unregisters event handlers before registering new ones', async () => {
+    let map;
+    function Component() {
+      const [count, setCount] = useState(0);
+
+      return (
+        <>
+          <span>events {count}</span>
+          <div data-testid="test" style={style}>
+            <Map
+              ref={r => (map = r)}
+              onCustomEvent={() => setCount(c => c + 1)}
+            />
+          </div>
+        </>
+      );
+    }
+
+    render(<Component />);
+
+    await screen.findByText('events 0');
+
+    map.dispatchEvent('customevent');
+    await screen.findByText('events 1');
+
+    map.dispatchEvent('customevent');
+    await screen.findByText('events 2');
+
+    map.dispatchEvent('customevent');
+    await screen.findByText('events 3');
+
+    map.dispatchEvent('customevent');
+    await screen.findByText('events 4');
+
+    map.dispatchEvent('customevent');
+    await screen.findByText('events 5');
   });
 });
