@@ -12,6 +12,7 @@
     "pretest": "npm run lint",
     "test": "npm-run-all test:*",
     "test:lib": "vitest run --root ./tests/lib",
+    "debug-test:lib": "vitest --inspect-brk --browser --root ./tests/lib --test-timeout=0 --no-file-parallelism",
     "test:rendering": "playwright test --config=tests/rendering/playwright.config.js",
     "test:unit": "vitest run --root ./tests/unit",
     "test:types": "npx tsc --noEmit",
