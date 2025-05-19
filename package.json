@@ -55,7 +55,7 @@
     "mustache": "^4.2.0",
     "npm-run-all": "^4.1.5",
     "ol": "^10.4.0",
-    "ol-mapbox-style": "^12.4.1",
+    "ol-mapbox-style": "^13.0.1",
     "prop-types": "^15.8.1",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
