@@ -35,7 +35,7 @@
   "devDependencies": {
     "@astrojs/mdx": "^4.0.3",
     "@astrojs/react": "^4.0.0",
-    "@octokit/rest": "^21.0.0",
+    "@octokit/rest": "^22.0.0",
     "@playwright/test": "^1.25.2",
     "@testing-library/react": "^16.0.0",
     "@types/react": "^19.1.9",
