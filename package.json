@@ -40,7 +40,7 @@
     "@testing-library/react": "^16.0.0",
     "@types/react": "^19.1.9",
     "@types/react-dom": "^19.1.7",
-    "@types/react-reconciler": "^0.31.0",
+    "@types/react-reconciler": "^0.32.1",
     "@vitest/browser": "^3.0.7",
     "astro": "^5.1.1",
     "es-main": "^1.2.0",
