@@ -1,5 +1,4 @@
 import {Octokit} from '@octokit/rest';
-import esMain from 'es-main';
 import semver from 'semver';
 
 export async function getLatestRelease() {
@@ -25,7 +24,7 @@ export async function getLatestRelease() {
   return latest;
 }
 
-if (esMain(import.meta)) {
+if (import.meta.main) {
   getLatestRelease()
     .then(latest => {
       process.stdout.write(`v${latest}\n`, () => process.exit(0));

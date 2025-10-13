@@ -1,7 +1,6 @@
 import {dirname, join} from 'node:path';
 import process from 'node:process';
 import {fileURLToPath} from 'node:url';
-import esMain from 'es-main';
 import fse from 'fs-extra';
 import semver from 'semver';
 
@@ -17,7 +16,7 @@ async function main() {
   return `${s.major}.${s.minor}.${s.patch}-dev.${Date.now()}`;
 }
 
-if (esMain(import.meta)) {
+if (import.meta.main) {
   main()
     .then(version => {
       process.stdout.write(`${version}\n`);

@@ -1,4 +1,3 @@
-import esMain from 'es-main';
 import semver from 'semver';
 import parseArgs from 'yargs-parser';
 import {getLatestRelease} from './get-latest-release.js';
@@ -28,7 +27,7 @@ async function main(options) {
   return semver.gte(version, latest);
 }
 
-if (esMain(import.meta)) {
+if (import.meta.main) {
   const options = parseArgs(process.argv.slice(2));
   if (!options.tag) {
     process.stderr.write('missing --tag\n');
