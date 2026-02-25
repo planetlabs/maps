@@ -41,9 +41,9 @@
     "@types/react": "^19.1.9",
     "@types/react-dom": "^19.1.7",
     "@types/react-reconciler": "^0.32.1",
-    "@vitest/browser": "^3.0.7",
+    "@vitest/browser": "^4.0.18",
     "astro": "^5.1.1",
-    "eslint": "^9.37.0",
+    "eslint": "^10.0.1",
     "eslint-config-planet": "^23.2.0",
     "eslint-plugin-astro": "^1.2.0",
     "eslint-plugin-mdx": "^3.0.0",
@@ -66,7 +66,7 @@
     "typescript": "^5.7.3",
     "unified": "^11.0.2",
     "vite": "^7.1.9",
-    "vitest": "^3.0.7",
+    "vitest": "^4.0.18",
     "yargs-parser": "^22.0.0"
   },
   "dependencies": {
