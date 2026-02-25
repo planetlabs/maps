@@ -1,3 +1,4 @@
+import {playwright} from '@vitest/browser-playwright';
 import {defineConfig} from 'vite';
 
 export default defineConfig({
@@ -9,7 +10,7 @@ export default defineConfig({
         },
       ],
       enabled: true,
-      provider: 'playwright',
+      provider: playwright(),
       headless: true,
       screenshotFailures: false,
     },
