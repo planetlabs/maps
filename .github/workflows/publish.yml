@@ -8,6 +8,7 @@ on:
       - 'v*.*.*'
 
 permissions:
+  id-token: write  # Required for OIDC
   contents: read
 
 jobs:
@@ -31,8 +32,6 @@ jobs:
           npm run build:types
           cp package.json readme.md lib && cd lib
           npm publish --tag dev
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
   publish-tag:
     if: startsWith(github.ref, 'refs/tags/')
     runs-on: ubuntu-latest
@@ -53,5 +52,3 @@ jobs:
           npm run build:types
           cp package.json readme.md lib && cd lib
           npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
