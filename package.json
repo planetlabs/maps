@@ -44,7 +44,7 @@
     "@vitest/browser": "^4.0.18",
     "@vitest/browser-playwright": "^4.0.18",
     "astro": "^5.1.1",
-    "eslint": "^9.37.0",
+    "eslint": "^10.0.1",
     "eslint-config-planet": "^23.2.0",
     "eslint-plugin-astro": "^1.2.0",
     "eslint-plugin-mdx": "^3.0.0",
