@@ -2,6 +2,12 @@
 
 This directory includes rendering test cases and expected results as PNG files.  The rendering tests are run as part of the `npm test` script.  The `npm run test:rendering` script runs just the rendering tests.  The rendering tests are run with [Playwright](https://playwright.dev/docs/intro).
 
+Before running the tests for the first time, install Playwright dependencies:
+
+```bash
+npx playwright install chromium
+```
+
 You can pass additional arguments to the `playwright` CLI by including them after a `--` argument terminator.  For example, to run only tests that match a given pattern, use the `--grep` argument.
 
 ```bash
