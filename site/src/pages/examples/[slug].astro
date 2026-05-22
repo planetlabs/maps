@@ -4,7 +4,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import fs from 'node:fs/promises';
 import remarkHtml from 'remark-html';
 import remarkParse from 'remark-parse';
-import {getCollection} from 'astro:content';
+import {getCollection, render} from 'astro:content';
 import {highlight} from '../../util/highlight.js';
 import {unified} from 'unified';
 
@@ -13,7 +13,7 @@ export async function getStaticPaths() {
 
   return examples.map(example => ({
     params: {
-      slug: example.slug,
+      slug: example.id,
     },
     props: {
       example,
@@ -41,7 +41,7 @@ const source = await highlight(
   rawSource.replaceAll('../../../../lib/', '@planet/maps/')
 );
 
-const {Content} = await example.render();
+const {Content} = await render(example);
 ---
 
 <style>

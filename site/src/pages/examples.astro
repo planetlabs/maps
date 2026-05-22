@@ -16,7 +16,7 @@ const examples = await getCollection('examples');
         .sort((a, b) => (a.data.level < b.data.level ? -1 : 1))
         .map(example => (
           <li>
-            <a href={`./${example.slug}/`}>{example.data.title}</a>
+            <a href={`./${example.id}/`}>{example.data.title}</a>
           </li>
         ))
     }

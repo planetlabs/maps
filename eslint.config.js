@@ -14,6 +14,8 @@ export default [
           ignore: [
             'astro:content',
             'astro/config',
+            'astro/loaders',
+            'astro/zod',
             '@astrojs/*',
             '@octokit/rest',
             'virtual:*',
